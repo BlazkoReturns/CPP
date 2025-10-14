@@ -1,5 +1,4 @@
-#include <iostream>
-#include <string>
+#include "tabelas.cpp"
 
 void gotoxy(int x, int y) {
    std::cout << "\033[" << y << ";" << x << "H";
@@ -9,14 +8,7 @@ void clearScreen() {
    std::cout << "\033[2J\033[1;1H";
 }
 
-struct Contatos {
-   int id;
-   std::string nome;
-   std::string email;
-   std::string telefone;
-}
-
-int main() {
+void CadastrarCliente(){
    clearScreen();
 
    std::cout << "--- Cadastro de Novo Contato ---" << std::endl;
@@ -39,6 +31,9 @@ int main() {
    gotoxy(1, 6);
    std::cout << "Contato salvo com sucesso!" << std::endl;
    std::cout << "Nome: " << contato.nome << ", Email: " << contato.email << ", Telefone: " << contato.telefone << std::endl;
+}
 
-   return 0;
+int main() {
+     CadastrarCliente();
+     return 0;
 }
